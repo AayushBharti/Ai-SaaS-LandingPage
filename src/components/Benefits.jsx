@@ -3,8 +3,8 @@ import Section from "./Section";
 import Heading from "./Heading";
 import { benefits } from "../constants";
 import Arrow from "../assets/svg/Arrow";
-import {GradientLight} from "./design/Benefits"
-import ClipPath from '../assets/svg/ClipPath'
+import { GradientLight } from "./design/Benefits";
+// import ClipPath from '../assets/svg/ClipPath'
 
 const Benefits = () => {
   return (
@@ -12,14 +12,15 @@ const Benefits = () => {
       <div className="container relative z-2">
         <Heading
           className="md:max-w-md lg:max-w-2xl text-center"
-          title="Chat Smarter, Not Harder with Brainwave"
+          title="Chat Smarter, Not Harder with StarForge"
         />
 
         <div className="flex flex-wrap gap-10 mb-10">
           {benefits.map((item) => (
             <div
               className="block relative p-0.5 bg-no-repeat
-              bg-[length:100%_100%] md:max-w-[24rem]"
+              bg-[length:100%_100%] md:max-w-[24rem] z-10
+              hover:scale-95 transition-all"
               style={{
                 backgroundImage: `url(${item.backgroundUrl})`,
               }}
@@ -38,20 +39,35 @@ const Benefits = () => {
                     height={48}
                     alt={item.title}
                   />
-                  <p
-                    className="ml-auto font-code tracking-wider
-                  text-xs font-bold text-n-1 uppercase cursor-pointer"
+                  <div
+                    className="group/edit ml-auto flex justify-center 
+                  cursor-pointer items-center"
                   >
-                    Explore more
-                  </p>
-                  <Arrow />
+                    <p
+                      className=" font-code tracking-wider 
+                      group-hover/edit:translate-x-0.5 transition-transform
+                      text-xs font-bold text-n-1 uppercase "
+                    >
+                      Explore more
+                    </p>
+                    <div
+                      className="group-hover/edit:translate-x-0.5 
+                    transition-transform"
+                    >
+                      <Arrow />
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              {item.light && <GradientLight/>}
+              {item.light && (
+                <div className="-z-10">
+                  <GradientLight />
+                </div>
+              )}
 
-              <div className="absolute inset-0.5 bg-n-8"
-              style={{clipPath:"url(#benefits)"}}
+              {/* <div className="absolute inset-0.5 bg-n-8"
+              // style={{clipPath:"url(#benefits)"}}
               >
                 <div className="absolute inset-0 opacity-0 
                 transition-opacity hover:opacity-10">
@@ -65,9 +81,9 @@ const Benefits = () => {
                     />
                   )}
                 </div>
-              </div>
-                  <ClipPath/> 
-                  {/* ClipPath is used to see full rectangles */}
+              </div> */}
+              {/* <ClipPath/>  */}
+              {/* ClipPath is used to see full rectangles */}
             </div>
           ))}
         </div>

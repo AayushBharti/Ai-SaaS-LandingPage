@@ -50,7 +50,7 @@ const Collaboration = () => {
             >
               <div
                 className="w-[6rem] aspect-square
-              m-auto p-[0.2rem] bg-conic-gradient rounded-full"
+              m-auto p-[0.3rem] bg-conic-gradient rounded-full"
               >
                 <div
                   className="flex items-center justify-center
